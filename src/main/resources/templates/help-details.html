@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" th:href="@{/img/fav.png}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Pacifico&display=swap" rel="stylesheet}">
+    <title>Верные друзья</title>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="index.html"><img class="logoo" th:src="@{/img/logo.png}" height="150"  alt="не найдено"></a>
+    </div>
+</header>
+<nav>
+    <div class="topnav" id="myTopnav">
+        <a href="/">Главная</a>
+        <a href="/pets">Наши животные</a>
+        <a href="/contacts">Контакты</a>
+        <a href="/help">Срочная помощь</a>
+        <a href="/help/add">Добавить пост о помощи</a>
+        <a id ="menu" href="#" class="icon">&#9776;</a>
+    </div>
+</nav>
+<main>
+    <div>
+        <div th:each="el : ${post}" class="full">
+            <h1 th:text="${el.title}"/><br>
+            <p th:text="${el.full_text}"/><br>
+            <a th:href="'/help/' + ${el.id} + '/edit'" class="e">Редактировать</a><br><br>
+            <form th:action="'/help/' + ${el.id} + '/remove'" method="post">
+                <button type="submit" class="del">Удалить</button>
+            </form>
+
+        </div>
+    </div>
+</main>
+<footer>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="dogs.html">Наши собаки</a>
+        <a href="cats.html">Наши кошки</a>
+        <a href="help.html">Как помочь?</a>
+    </nav>
+    <div class="logo">
+        <a href="index.html"><img class="logoo" th:src="@{/img/logo.png}" height="150" alt="нет"></a>
+    </div>
+</footer>
+</body>
+</html>

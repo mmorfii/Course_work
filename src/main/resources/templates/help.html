@@ -28,11 +28,10 @@
   </nav>
   <main>
       <div>
-    <h1>Здесь могла бы быть ваша реклама</h1>
-         <div th:each="el : ${posts}" class="alert alert-info mt-2">
+         <div th:each="el : ${posts}" class="publ">
              <h3 th:text="${el.title}"/>
-             <p th:text="${el.anons}"/>
-             <a th:href="'/help' + ${el.id}">Детальнее</a>
+             <p th:text="${el.anons}"/><br>
+             <a th:href="'/help/' + ${el.id}" class="button">Детальнее</a>
          </div>
       </div>
   </main>

@@ -28,13 +28,15 @@
 </nav>
 <main>
   <div class="add">
-    <h2>Добавить пост о помощи</h2>
-    <form action="/help/add" method="post">
-      <input type="text" name="title" placeholder="Тема"><br>
-      <input type="text" name="anons" placeholder="Опишите проблему"><br>
-      <textarea name="full_text" placeholder="Полный текст"></textarea><br>
-      <button type="submit">Добавить</button>
+    <h2>Редактирование поста</h2>
+    <div th:each="el : ${post}">
+    <form method="post">
+      <input type="text" th:value="${el.title}" name="title" placeholder="Тема"><br>
+      <input type="text" th:value="${el.anons}" name="anons" placeholder="Опишите проблему"><br>
+      <textarea name="full_text" placeholder="Полный текст" th:text="${el.full_text}" /><br>
+      <button type="submit">Обновить</button>
     </form>
+    </div>
   </div>
 </main>
 <footer>
