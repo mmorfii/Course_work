@@ -1,4 +1,4 @@
-package com.example.shelter;
+package com.example.shelter.controllers;
 
 import com.example.shelter.models.Post;
 import com.example.shelter.repo.PostRepository;

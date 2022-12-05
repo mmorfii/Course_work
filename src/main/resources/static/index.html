@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="img/fav.png">
@@ -28,6 +28,9 @@
 </nav>
 <main>
     <img src="img/main.jpeg" alt="не найдено" class="mw-100">
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
     <div class="greeting"><p><mark class="num1">Добро пожаловать</mark> на сайт приюта для бездомных животных "Верные друзья"!</p></div>
     <div class="meeting">
         <p><mark class="num2">"Верные друзья"</mark> - частный приют для бездомных животных в Московской области. Сейчас приют находится в Одинцовском районе Московской области, в нем проживают 500 собак, 100 кошек, лошадь и коза. Все животные стерилизованы и вакцинированы и многие из них готовы обрести новый дом</p>

@@ -1,4 +1,4 @@
-package com.example.shelter;
+package com.example.shelter.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
